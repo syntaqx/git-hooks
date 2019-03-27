@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Test if the CircleCI config file is well formed via the circleci local cli.
+# Test if the CircleCI config file is well formed.
 # https://circleci.com/docs/2.0/local-cli/
 # https://circleci.com/blog/circleci-hacks-validate-circleci-config-on-every-commit-with-a-git-hook/
 

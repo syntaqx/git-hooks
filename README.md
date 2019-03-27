@@ -2,11 +2,11 @@
 
 [pre-commit]: http://pre-commit.com/
 
-A collection of useful Git hooks for integration with [pre-commit][].
+A collection of useful Git hooks for use with [pre-commit][].
 
 ## Usage
 
-Create or append to your `.pre-commit-config.yml` configuration:
+Create or append to your `.pre-commit-config.yaml` configuration:
 
 ```yaml
 - repo: https://github.com/syntaqx/git-hooks
@@ -15,7 +15,9 @@ Create or append to your `.pre-commit-config.yml` configuration:
     - id: circleci-config-validate
 ```
 
-Then simply install or run the checks on-demand as desired.
+## Available hooks
+
+* `circleci-config-validate` - Test if the CircleCI config file is well formed.
 
 ## License
 

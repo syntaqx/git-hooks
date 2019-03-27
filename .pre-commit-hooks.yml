@@ -1,6 +1,6 @@
 - id: circleci-config-validate
-  name: CircleCI config validator
-  description: Validates CircleCI configuration files locally
+  name: circleci config validate
+  description: Test if the CircleCI config file is well formed.
   entry: hooks/circleci-config-validate.sh
   language: [script]
   files: ^.circleci/config.ya?ml$
