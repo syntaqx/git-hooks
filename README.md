@@ -10,7 +10,7 @@ Create or append to your `.pre-commit-config.yaml` configuration:
 
 ```yaml
 - repo: https://github.com/syntaqx/git-hooks
-  rev: v0.0.1
+  rev: v0.0.6
   hooks:
     - id: circleci-config-validate
 ```

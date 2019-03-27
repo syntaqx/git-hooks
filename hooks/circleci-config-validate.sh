@@ -19,7 +19,7 @@ if ! [ -x "$(command -v circleci)" ]; then
 fi
 
 # The following is needed by the circleci local build tool (due to Docker interactivity)
-exec < /dev/tty
+# exec < /dev/tty
 
 # If validation fails, tell Git to stop and provide error message. Otherwise, continue.
 if ! msg=$(circleci config validate); then
