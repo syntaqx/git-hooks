@@ -2,5 +2,5 @@
   name: circleci config validate
   description: Test if the CircleCI config file is well formed.
   entry: hooks/circleci-config-validate.sh
-  language: [script]
+  language: script
   files: ^.circleci/config.ya?ml$
