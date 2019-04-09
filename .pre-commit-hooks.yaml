@@ -5,3 +5,21 @@
   entry: hooks/circleci-config-validate.sh
   language: script
   files: ^.circleci/config.yml$
+- id: go-fmt
+  name: go fmt
+  description: Runs `go fmt`, requires go
+  entry: hooks/go-fmt.sh
+  language: script
+  files: \.go$
+- id: go-test
+  name: go test
+  description: Runs `go test`, requires go
+  entry: hooks/go-golangci-lint.sh
+  language: script
+  files: \.go$
+- id: go-golangci-lint
+  name: golangci lint
+  description: Runs `golangci-lint`, requires golangci-lint
+  entry: hooks/go-golangci-lint.sh
+  language: script
+  files: \.go$

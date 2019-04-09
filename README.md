@@ -1,6 +1,6 @@
 # git-hooks
 
-[pre-commit]: http://pre-commit.com/
+[pre-commit]: https://pre-commit.com/
 
 A collection of useful Git hooks for use with [pre-commit][].
 

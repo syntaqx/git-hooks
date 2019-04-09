@@ -5,6 +5,8 @@ repos:
     hooks:
       - id: check-yaml
       - id: check-merge-conflict
+      - id: check-yaml
+      - id: trailing-whitespace
   - repo: local
     hooks:
       - id: circleci-config-validate

@@ -6,4 +6,4 @@ jobs:
     docker:
       - image: circleci/golang
     steps:
-      - run: echo "placeholder"
+      - run: echo "@TODO:"
