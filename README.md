@@ -10,9 +10,12 @@ Create or append to your `.pre-commit-config.yaml` configuration:
 
 ```yaml
 - repo: https://github.com/syntaqx/git-hooks
-  rev: v0.0.7
+  rev: v0.0.8
   hooks:
     - id: circleci-config-validate
+    - id: go-fmt
+    - id: go-test
+    - id: go-golangci-lint
 ```
 
 ## Available hooks
