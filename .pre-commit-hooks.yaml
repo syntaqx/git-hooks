@@ -7,19 +7,19 @@
   files: ^.circleci/config.yml$
 - id: go-fmt
   name: go fmt
-  description: Runs `go fmt`, requires go
+  description: Runs `go fmt` and asserts no changes are needed.
   entry: hooks/go-fmt.sh
   language: script
   files: \.go$
 - id: go-test
   name: go test
-  description: Runs `go test`, requires go
+  description: Runs `go test` and asserts no tests are failing.
   entry: hooks/go-golangci-lint.sh
   language: script
   files: \.go$
 - id: go-golangci-lint
   name: golangci lint
-  description: Runs `golangci-lint`, requires golangci-lint
+  description: Runs `golangci-lint`, requires golangci-lint.
   entry: hooks/go-golangci-lint.sh
   language: script
   files: \.go$

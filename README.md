@@ -18,6 +18,9 @@ Create or append to your `.pre-commit-config.yaml` configuration:
 ## Available hooks
 
 * `circleci-config-validate` - Test if the CircleCI config file is well formed.
+* `go-fmt` - Runs `go fmt` and asserts no changes are needed.
+* `go-test` - Runs `go test` and asserts no tests are failing.
+* `go-golangci-lint` - Runs `golangci-lint`, requires golangci-lint.
 
 ## License
 
