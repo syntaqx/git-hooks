@@ -17,6 +17,13 @@
   entry: hooks/go-test.sh
   language: script
   files: \.go$
+- id: go-generate
+  name: go generate
+  description: Runs `go generate` against the projects go files.
+  entry: hooks/go-test.sh
+  language: script
+  files: \.go$
+  always_run: true
 - id: go-golangci-lint
   name: golangci lint
   description: Runs `golangci-lint`, requires golangci-lint.

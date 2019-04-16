@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 set -e
 
 if go test -short -v ./... -ne 0; then
