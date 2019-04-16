@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e
 
-go mod tidy
+GO111MODULE=on go mod tidy
