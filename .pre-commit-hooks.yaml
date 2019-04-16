@@ -1,29 +1,41 @@
 ---
+
 - id: circleci-config-validate
   name: CircleCI config validation
   description: Test if the CircleCI config is well formed.
   entry: hooks/circleci-config-validate.sh
   language: script
   files: ^.circleci/config.yml$
+
 - id: go-fmt
   name: go fmt
   description: Runs `go fmt` and asserts no changes are needed.
   entry: hooks/go-fmt.sh
   language: script
   files: \.go$
+
 - id: go-test
   name: go test
   description: Runs `go test` and asserts no tests are failing.
   entry: hooks/go-test.sh
   language: script
   files: \.go$
+
 - id: go-generate
   name: go generate
   description: Runs `go generate` against the projects go files.
-  entry: hooks/go-test.sh
+  entry: hooks/go-generate.sh
   language: script
   files: \.go$
   always_run: true
+
+- id: go-mod
+  name: go mod
+  description: Runs `go mod tidy` and asserts all dependencies have been added.
+  entry: hooks/go-mod.sh
+  language: script
+  files: \.go$
+
 - id: go-golangci-lint
   name: golangci lint
   description: Runs `golangci-lint`, requires golangci-lint.
