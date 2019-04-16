@@ -14,7 +14,7 @@
 - id: go-test
   name: go test
   description: Runs `go test` and asserts no tests are failing.
-  entry: hooks/go-golangci-lint.sh
+  entry: hooks/go-test.sh
   language: script
   files: \.go$
 - id: go-golangci-lint
