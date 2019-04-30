@@ -5,7 +5,10 @@ jobs:
   build:
     docker:
       - image: circleci/python
+    environment:
+      GOPATH: ~/go
     steps:
+      - run: mkdir -p $GOPATH
       - run: sudo apt-get -y install golang
       - run: go get -u mvdan.cc/sh/cmd/shfmt
       - run: sudo apt-get -y install shellcheck
