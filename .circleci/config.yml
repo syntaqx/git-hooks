@@ -7,12 +7,18 @@ jobs:
       - image: circleci/python
     steps:
       - run: |
-          sudo apt-get -y install golang
-          export GOPATH=$HOME/go
-          mkdir -p $GOPATH
-          export PATH=$PATH:$GOPATH/bin
-
-      - run: go get -u mvdan.cc/sh/cmd/shfmt
+          cd /tmp && wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
+          sudo tar -xvf go1.11.linux-amd64.tar.gz
+          sudo mv go /usr/local
+      - run: |
+          echo 'export GOROOT=/usr/local/go' >> ~/.profile
+          echo "export GOPATH=$(realpath $HOME/go)" >> ~/.profile
+          echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.profile
+          source ~/.profile
+      - run: |
+          cd $(mktemp -d)
+          go mod init tmp
+          go get mvdan.cc/sh/cmd/shfmt
       - run: sudo apt-get -y install shellcheck
       - run: pip install pre-commit
       - run: pre-commit install
