@@ -6,8 +6,12 @@ jobs:
     docker:
       - image: circleci/python
     steps:
-      - run: sudo apt-get -y install golang
-      - run: mkdir -p $GOPATH && export PATH=$PATH:$GOPATH/bin
+      - run: |
+          sudo apt-get -y install golang
+          export GOPATH=$HOME/go
+          mkdir -p $GOPATH
+          export PATH=$PATH:$GOPATH/bin
+
       - run: go get -u mvdan.cc/sh/cmd/shfmt
       - run: sudo apt-get -y install shellcheck
       - run: pip install pre-commit
