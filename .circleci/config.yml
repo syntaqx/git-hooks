@@ -6,6 +6,7 @@ jobs:
     docker:
       - image: circleci/golang
     steps:
+      - checkout
       - run: go get -u mvdan.cc/sh/cmd/shfmt
       - run: sudo apt-get -y install python-pip
       - run: sudo pip install pre-commit
