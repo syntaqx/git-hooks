@@ -5,9 +5,8 @@ jobs:
   build:
     docker:
       - image: circleci/python
-    environment:
-      GOPATH: $HOME/go
     steps:
+      - run: export GOPATH=$(realpath $HOME/go)
       - run: mkdir -p $GOPATH && export PATH=$PATH:$GOPATH/bin
       - run: sudo apt-get -y install golang
       - run: go get -u mvdan.cc/sh/cmd/shfmt
