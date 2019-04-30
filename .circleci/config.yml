@@ -6,4 +6,8 @@ jobs:
     docker:
       - image: circleci/golang
     steps:
-      - run: echo "@TODO:"
+      - run: |
+          sudo apt-get update
+          sudo apt-get -y install shellcheck shfmt
+      - run: pip install pre-commit
+      - run: pre-commit install

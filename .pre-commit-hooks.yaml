@@ -42,3 +42,27 @@
   entry: hooks/go-golangci-lint.sh
   language: script
   files: \.go$
+
+- id: forbid-binary
+  name: Forbid binaries
+  description: Forbid binary files from being committed
+  entry: hooks/forbid-binary.sh
+  language: script
+  types: ['binary']
+
+- id: shellcheck
+  name: Test shell scripts with shellcheck
+  description: Shell scripts conform to shellcheck
+  entry: hooks/shellcheck.sh
+  language: script
+  types: [shell]
+  args: [-e, SC1091]
+  additional_dependencies: [shellcheck]
+
+- id: shfmt
+  name: Check shell style with shfmt
+  language: script
+  entry: hooks/shfmt.sh
+  types: [shell]
+  args: ['-l', '-i', '2', '-ci']
+  additional_dependencies: [shfmt]
