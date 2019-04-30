@@ -1,4 +1,4 @@
-# git-hooks
+# ![git-hooks](./docs/social-preview.png)
 
 [pre-commit]: https://pre-commit.com/
 
