@@ -5,16 +5,15 @@ jobs:
   build:
     docker:
       - image: circleci/python
+    environment:
+      GOROOT: /usr/local/go
+      GOPATH: /home/circleci/go
     steps:
+      - run: export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
       - run: |
           cd /tmp && wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
           sudo tar -xvf go1.11.linux-amd64.tar.gz
           sudo mv go /usr/local/bin
-      - run: |
-          echo 'export GOROOT=/usr/local/go' >> ~/.profile
-          echo "export GOPATH=$(realpath $HOME/go)" >> ~/.profile
-          echo 'export PATH=$GOPATH/bin:$GOROOT/bin:$PATH' >> ~/.profile
-          source ~/.profile
       - run: |
           cd $(mktemp -d)
           go mod init tmp
