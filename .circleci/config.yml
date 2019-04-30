@@ -4,20 +4,9 @@ jobs:
 
   build:
     docker:
-      - image: circleci/python
-    environment:
-      GOROOT: /usr/local/go
-      GOPATH: /home/circleci/go
+      - image: circleci/golang
     steps:
-      - run: export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
-      - run: |
-          cd /tmp && wget https://dl.google.com/go/go1.11.linux-amd64.tar.gz
-          sudo tar -xvf go1.11.linux-amd64.tar.gz
-          sudo mv go /usr/local/bin
-      - run: |
-          cd $(mktemp -d)
-          go mod init tmp
-          go get mvdan.cc/sh/cmd/shfmt
-      - run: sudo apt-get -y install shellcheck
-      - run: pip install pre-commit
+      - run: go get -u mvdan.cc/sh/cmd/shfmt
+      - run: sudo apt-get -y install python-pip
+      - run: sudo pip install pre-commit
       - run: pre-commit install
