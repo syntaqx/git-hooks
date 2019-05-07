@@ -33,7 +33,6 @@ Create or append to your `.pre-commit-config.yaml` configuration:
   - id: go-mod-tidy
   - id: go-generate
   - id: go-golangci-lint
-  - id: forbid-binary
   - id: shellcheck
   - id: shfmt
 ```
