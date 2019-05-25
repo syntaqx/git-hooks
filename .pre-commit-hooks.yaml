@@ -36,13 +36,6 @@
   files: \.go$
   always_run: true
 
-- id: go-golangci-lint
-  name: golangci lint
-  description: Runs `golangci-lint`, requires golangci-lint.
-  entry: hooks/go-golangci-lint.sh
-  language: script
-  files: \.go$
-
 - id: forbid-binary
   name: Forbid binaries
   description: Forbid binary files from being committed

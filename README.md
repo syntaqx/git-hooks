@@ -14,7 +14,6 @@ A collection of useful Git hooks for use with [pre-commit][].
 * `go-test` - Runs `go test` and asserts no tests are failing.
 * `go-mod-tidy` - Runs `go mod tidy` and asserts all dependencies have been added.
 * `go-generate` - Runs `go generate` aginst the projects go files.
-* `go-golangci-lint` - Runs `golangci-lint`, requires golangci-lint.
 * `shellcheck` - Run `shellcheck` against scripts.
 * `shfmt` - Run `shfmt` against scripts.
 
@@ -32,7 +31,6 @@ Create or append to your `.pre-commit-config.yaml` configuration:
   - id: go-test
   - id: go-mod-tidy
   - id: go-generate
-  - id: go-golangci-lint
   - id: shellcheck
   - id: shfmt
 ```
