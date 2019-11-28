@@ -6,7 +6,7 @@ readonly DEBUG=${DEBUG:-unset}
 
 # do not run in Circle CI
 if [[ -n $CIRCLECI ]]; then
-	return
+	exit 0
 fi
 
 # assert the circleci command exists
