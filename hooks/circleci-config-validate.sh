@@ -4,6 +4,11 @@ set -e
 readonly DEBUG=${DEBUG:-unset}
 [[ $DEBUG != unset ]] && set -x
 
+# do not run in Circle CI
+if [[ -n $CIRCLECI ]]; then
+	return
+fi
+
 # assert the circleci command exists
 if ! [ -x "$(command -v circleci)" ]; then
     echo 'circleci command not found'
