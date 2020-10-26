@@ -49,7 +49,7 @@
   entry: hooks/shellcheck.sh
   language: script
   types: [shell]
-  exclude_types: [awk, csh, expect, perl, python, ruby, tcsh, zsh]
+  exclude_types: [csh, perl, python, ruby, tcsh, zsh]
   args: [-e, SC1091]
   additional_dependencies: [shellcheck]
 
@@ -58,6 +58,6 @@
   language: script
   entry: hooks/shfmt.sh
   types: [shell]
-  exclude_types: [awk, csh, expect, perl, python, ruby, tcsh, zsh]
+  exclude_types: [csh, perl, python, ruby, tcsh, zsh]
   args: ['-l', '-i', '2', '-ci']
   additional_dependencies: [shfmt]
