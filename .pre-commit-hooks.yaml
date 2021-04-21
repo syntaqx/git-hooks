@@ -51,7 +51,6 @@
   types: [shell]
   exclude_types: [csh, perl, python, ruby, tcsh, zsh]
   args: [-e, SC1091]
-  additional_dependencies: [shellcheck]
 
 - id: shfmt
   name: Check shell style with shfmt
@@ -60,4 +59,3 @@
   types: [shell]
   exclude_types: [csh, perl, python, ruby, tcsh, zsh]
   args: ['-l', '-i', '2', '-ci']
-  additional_dependencies: [shfmt]
