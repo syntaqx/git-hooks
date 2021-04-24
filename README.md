@@ -2,7 +2,7 @@
 
 [pre-commit]: https://pre-commit.com/
 
-[![CircleCI](https://circleci.com/gh/syntaqx/git-hooks.svg?style=svg)](https://circleci.com/gh/syntaqx/git-hooks)
+![pre-commit workflow](https://github.com/syntaqx/git-hooks/actions/workflows/pre-commit.yml/badge.svg)
 
 A collection of useful Git hooks for use with [pre-commit][].
 
