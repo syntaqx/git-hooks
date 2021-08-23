@@ -17,7 +17,7 @@ if [[ -z $CIRCLECI ]]; then
 	[ -f /dev/tty ] && exec /dev/tty
 
 	# If validation fails, tell Git to stop and provide error message. Otherwise, continue.
-	if ! msg=$(circleci config validate); then
+	if ! msg=$(circleci config validate "$@"); then
 		echo "CircleCI Configuration Failed Validation."
 		echo "$msg"
 		exit 1
