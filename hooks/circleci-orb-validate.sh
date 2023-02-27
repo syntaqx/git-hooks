@@ -6,13 +6,6 @@ readonly DEBUG=${DEBUG:-unset}
 
 # do not run in Circle CI
 if [[ -z $CIRCLECI ]]; then
-
-	#assert repo is a CircleCI Orb
-	if ! [ ! -f "src/@orb.yml" ]; then
-		echo 'Not a CircleCI orb repo. Skipping'
-		exit 0
-	fi
-
 	# assert the circleci command exists
 	if ! [ -x "$(command -v circleci)" ]; then
 		echo 'circleci command not found'
