@@ -7,6 +7,13 @@
   language: script
   files: ^.circleci/config.yml$
 
+- id: circleci-orb-validate
+  name: CircleCI Orb validation
+  description: Test if the CircleCI Orb is well formed and can be packed.
+  entry: hooks/circleci-orb-validate.sh
+  language: script
+  always_run: true
+
 - id: go-fmt
   name: go fmt
   description: Runs `go fmt` and asserts no changes are needed.
