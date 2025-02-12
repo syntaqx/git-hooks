@@ -5,7 +5,8 @@
   description: Test if the CircleCI config is well formed.
   entry: hooks/circleci-config-validate.sh
   language: script
-  files: ^.circleci/*.yml$
+  types: [yaml]
+  files: ^\.circleci/
 
 - id: go-fmt
   name: go fmt
